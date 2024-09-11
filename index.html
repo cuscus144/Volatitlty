@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short Term Trend - Animated Linear Progress Bar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 25px;
+            height: 30px;
+            margin: 20px 0;
+            overflow: hidden;
+            box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            border-radius: 25px;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            font-weight: bold;
+            transition: width 2s ease-in-out;
+            animation: blink 1.5s infinite alternate;
+        }
+
+        .uptrend {
+            background-color: #4caf50; /* Green */
+        }
+
+        .downtrend {
+            background-color: #f44336; /* Red */
+        }
+
+        .neutral {
+            background-color: #ff9800; /* Orange */
+        }
+
+        .progress-info {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        /* Blinking Animation */
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* Link styling */
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Short Term Trend</h1>
+
+<!-- V10 Neutral -->
+<div class="progress-info">V10 NEUTRAL</div>
+<div class="progress-container">
+    <div class="progress-bar neutral" style="width: 50%;">Neutral</div>
+</div>
+
+<!-- V50 Uptrend 23% with Link -->
+<div class="progress-info">
+    <a href="https://res.cloudinary.com/dr6behm5w/image/upload/v1726073002/volatility-50-index-h6-deriv-svg-llc_funyzy.png" target="_blank">V50 UPTREND 23%</a>
+</div>
+<div class="progress-container">
+    <div class="progress-bar uptrend" style="width: 23%;">23%</div>
+</div>
+
+<!-- V75 Neutral -->
+<div class="progress-info">V75 NEUTRAL</div>
+<div class="progress-container">
+    <div class="progress-bar neutral" style="width: 50%;">Neutral</div>
+</div>
+
+<!-- V25(s) Uptrend 69% with Link -->
+<div class="progress-info">
+    <a href="https://res.cloudinary.com/dr6behm5w/image/upload/v1726073002/volatility-25-1s-index-h8-deriv-svg-llc_bcml0z.png" target="_blank">V25(s) UPTREND 69%</a>
+</div>
+<div class="progress-container">
+    <div class="progress-bar uptrend" style="width: 69%;">69%</div>
+</div>
+
+<!-- V50(s) Uptrend 79% with Link -->
+<div class="progress-info">
+    <a href="https://res.cloudinary.com/dr6behm5w/image/upload/v1726073002/volatility-50-1s-index-h8-deriv-svg-llc_a7iwqb.png" target="_blank">V50(s) UPTREND 79%</a>
+</div>
+<div class="progress-container">
+    <div class="progress-bar uptrend" style="width: 79%;">79%</div>
+</div>
+
+<!-- V75(s) Downtrend 83% with Link -->
+<div class="progress-info">
+    <a href="https://res.cloudinary.com/dr6behm5w/image/upload/v1726073001/volatility-75-1s-index-h6-deriv-svg-llc_tz1gzw.png" target="_blank">V75(s) DOWNTREND 83%</a>
+</div>
+<div class="progress-container">
+    <div class="progress-bar downtrend" style="width: 83%;">83%</div>
+</div>
+
+<!-- V250(s) Uptrend 92% with Link -->
+<div class="progress-info">
+    <a href="https://res.cloudinary.com/dr6behm5w/image/upload/v1726073001/volatility-250-1s-index-h6-deriv-svg-llc_dbbacc.png" target="_blank">V250(s) UPTREND 92%</a>
+</div>
+<div class="progress-container">
+    <div class="progress-bar uptrend" style="width: 92%;">92%</div>
+</div>
+
+<script>
+    // Automatically apply the blinking animation when the page loads
+    window.onload = function() {
+        const bars = document.querySelectorAll('.progress-bar');
+        bars.forEach(bar => {
+            const width = bar.style.width;
+            bar.style.width = width;
+        });
+    };
+</script>
+
+</body>
+</html>
